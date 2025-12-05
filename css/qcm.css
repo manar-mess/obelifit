@@ -1,0 +1,184 @@
+/* ---------- Body & Container ---------- */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+
+    /* Gradient overlay + background image */
+    background: linear-gradient(
+                    rgba(10, 132, 255, 0.6), 
+                    rgba(39, 65, 101, 0.6)
+                ), 
+                url('../img/wa.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* ---------- Container ---------- */
+.container {
+    display: flex;
+    flex: 1;
+    transition: background 1s ease;
+}
+
+/* ---------- Question Column ---------- */
+.question {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    font-size: 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-right: 2px solid rgba(255,255,255,0.2);
+}
+
+.question::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 20%, transparent 20%);
+    top: -50%;
+    left: -50%;
+    animation: rotate 20s linear infinite;
+    border-radius: 50%;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
+
+/* ---------- Choices Column ---------- */
+.choices {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+}
+
+/* ---------- Option Cards ---------- */
+label {
+    display: flex;
+    align-items: center;
+    margin: 12px 0;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 20px;
+    border-radius: 15px;
+    transition: 0.3s ease, background 0.5s ease;
+}
+
+label:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-3px);
+}
+
+label img {
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+    border-radius: 50%;
+    animation: bounce 2s infinite alternate;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-8px); }
+}
+
+/* ---------- Inputs ---------- */
+input[type="radio"], input[type="checkbox"], input[type="text"] {
+    margin-right: 12px;
+    accent-color: #FFB703;
+}
+
+input[type="text"] {
+    font-size: 1.2rem;
+    padding: 10px;
+    width: 100%;
+    border-radius: 12px;
+    border: none;
+    margin-top: 10px;
+}
+
+/* ---------- Floating Cartoon Image ---------- */
+#qcmImg {
+    width: 150px;
+    margin: 20px auto;
+    animation: float 3s infinite ease-in-out;
+    display: block;
+    border-radius: 50%;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+@keyframes float {
+    0% { transform: translateY(0);}
+    50% { transform: translateY(-15px);}
+    100% { transform: translateY(0);}
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px; /* Suivant button on the right */
+    padding: 14px 35px;
+    border-radius: 15px;
+    border: none;
+    background-color: #FFB703;
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: 0.3s ease, background 0.5s ease;
+}
+
+.btn:hover {
+    background-color: #100d02;
+    transform: scale(1.05);
+}
+
+/* ---------- Step Back Button ---------- */
+.btn-back {
+    position: fixed;
+    bottom: 20px;
+    left: 20px; /* Step back on the left */
+    padding: 14px 35px;
+    border-radius: 15px;
+    border: none;
+    background-color: #FFB703;
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: 0.3s ease, background 0.5s ease;
+}
+
+.btn-back:hover {
+    background-color: #100d02;
+    transform: scale(1.05);
+}
+
+/* ---------- Dynamic Themes (step based) ---------- */
+.theme-0 { background: linear-gradient(135deg, #0A84FF, #004AAD); }
+.theme-1 { background: linear-gradient(135deg, #0ABF8F, #00764B); }
+.theme-2 { background: linear-gradient(135deg, #FFA500, #FF6F00); }
+.theme-3 { background: linear-gradient(135deg, #FF3D7F, #C70039); }
+.theme-4 { background: linear-gradient(135deg, #8E44AD, #5B2C6F); }
+.theme-5 { background: linear-gradient(135deg, #FFC300, #FF5733); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    .container { flex-direction: column; }
+    .question, .choices { flex: unset; border: none; padding: 20px; }
+}

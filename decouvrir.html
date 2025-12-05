@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Découvrir le village - ObéliFit</title>
+    <link rel="stylesheet" href="../css/decouvrir.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        function openCharacter(name) {
+            window.location.href = "caracteres.html?name=" + name;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1 class="logo">Obéli<span>Fit</span></h1>
+    </header>
+
+    <section class="village-container">
+        <h2>Bienvenue dans le village des Irréductibles !</h2>
+        <p>Clique sur un personnage pour découvrir des conseils fitness et des mouvements corrects.</p>
+
+        <div class="village">
+            <!-- Astérix -->
+            <div class="village-item" onclick="openCharacter('astérix')" data-tip="Agilité et posture : fais des étirements dynamiques et des squats légers.">
+                <img src="img/asterix.jpg" alt="Astérix">
+                <span>Astérix</span>
+            </div>
+
+            <!-- Obélix -->
+            <div class="village-item" onclick="openCharacter('obelix')" data-tip="Force : squats, pompes et gainage pour renforcer tes muscles !">
+                <img src="img/obelix.jpg" alt="Obélix">
+                <span>Obélix</span>
+            </div>
+
+            <!-- Panoramix -->
+            <div class="village-item" onclick="openCharacter('panoramix')" data-tip="Souplesse et yoga : étirements et postures pour une meilleure posture.">
+                <img src="img/panoramix.jpg" alt="Panoramix">
+                <span>Panoramix</span>
+            </div>
+
+            <!-- Abraracourcix -->
+            <div class="village-item" onclick="openCharacter('abraracourcix')" data-tip="Cardio léger : marche, saut et exercices doux pour ton cœur.">
+                <img src="img/abraracourcix.jpg" alt="Abraracourcix">
+                <span>Abraracourcix</span>
+            </div>
+
+            <!-- Idéfix -->
+            <div class="village-item" onclick="openCharacter('idefix')" data-tip="Bien-être : gainage et marche pour rester en forme et détendu.">
+                <img src="img/idéfix.jpg" alt="Idéfix">
+                <span>Idéfix</span>
+            </div>
+        </div>
+
+        <div class="qcm-btn-container">
+            <a href="qcm1.html" class="btn primary">Découvre ton profil ObéliFit</a>
+        </div>
+    </section>
+</body>
+</html>
